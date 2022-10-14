@@ -33,10 +33,12 @@ export default function ContextProvider({children}) {
     setCartItems(prevItems=>prevItems.filter(item=>item.id!==id))
   }
 
-  const emptyCard=()=>(setCartItems([]))
+  const emptyCart = () =>{
+    setCartItems([])
+  }
 
   return (
-    <Context.Provider value={{allPhotos, toggleFavorite,cartItems,addToCart,removeFromCart,emptyCard}}>
+    <Context.Provider value={{allPhotos, toggleFavorite,cartItems,addToCart,removeFromCart,emptyCart}}>
         {children}
     </Context.Provider>
   );
